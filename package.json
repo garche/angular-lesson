@@ -1,0 +1,22 @@
+{
+  "name": "angular-modules",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/garche/angular-modules.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/garche/angular-modules/issues"
+  },
+  "homepage": "https://github.com/garche/angular-modules#readme",
+  "dependencies": {
+    "@angular/cli": "^15.1.1"
+  }
+}
