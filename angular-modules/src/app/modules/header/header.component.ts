@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component } from "@angular/core";
+import { ChangeDetectionStrategy, Component, Input } from "@angular/core";
 
 @Component({
   selector: 'my-header',
@@ -8,7 +8,6 @@ import { ChangeDetectionStrategy, Component } from "@angular/core";
 })
 export class HeaderComponent {
 
-  public get title(): string {
-    return 'Главная';
-  }
+  @Input()
+  public title: string = '';
 }
