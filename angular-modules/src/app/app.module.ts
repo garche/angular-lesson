@@ -6,6 +6,7 @@ import { LoggerService } from './services/logger.service';
 import { AppRoutingModule } from "./app-routing.module";
 import { AboutComponent } from './children/about/about.component';
 import { NotFoundComponent } from './children/not-found/not-found.component';
+import { HeaderModule } from "./modules/header/header.module";
 
 @NgModule({
   declarations: [
@@ -17,6 +18,7 @@ import { NotFoundComponent } from './children/not-found/not-found.component';
     BrowserModule,
     AppRoutingModule,
     MainModule,
+    HeaderModule,
   ],
   providers: [LoggerService],
   bootstrap: [AppComponent]
