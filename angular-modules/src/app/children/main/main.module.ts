@@ -1,15 +1,8 @@
-import { MainComponent } from './main.component';
+import { MainComponent } from './components/main/main.component';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HeaderModule } from '../../modules/header/header.module';
-import { RouterModule, Routes } from '@angular/router';
-
-const routes: Routes = [
-  {
-    path: '',
-    component: MainComponent
-  }
-]
+import { MainRoutingModule } from "./main.routing-module";
 
 @NgModule({
   declarations: [
@@ -17,9 +10,9 @@ const routes: Routes = [
   ],
   exports: [MainComponent],
   imports: [
-    RouterModule.forChild(routes),
     CommonModule,
     HeaderModule,
+    MainRoutingModule,
   ],
   providers: [],
 })

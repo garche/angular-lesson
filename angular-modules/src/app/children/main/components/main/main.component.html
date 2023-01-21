@@ -1,0 +1,13 @@
+<my-header [title]="'Главная'"></my-header>
+<div class="container">
+  <table>
+    <thead>
+      <td>Имя</td>
+      <td>Возраст</td>
+    </thead>
+    <tr *ngFor="let person of  personList">
+      <td>{{ person.name }}</td>
+      <td>{{ person.age }}</td>
+    </tr>
+  </table>
+</div>
