@@ -1,7 +1,15 @@
-import { MainComponent } from "./main.component";
-import { NgModule } from "@angular/core";
-import { CommonModule } from "@angular/common";
-import { HeaderModule } from "../../modules/header/header.module";
+import { MainComponent } from './main.component';
+import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { HeaderModule } from '../../modules/header/header.module';
+import { RouterModule, Routes } from '@angular/router';
+
+const routes: Routes = [
+  {
+    path: '',
+    component: MainComponent
+  }
+]
 
 @NgModule({
   declarations: [
@@ -9,6 +17,7 @@ import { HeaderModule } from "../../modules/header/header.module";
   ],
   exports: [MainComponent],
   imports: [
+    RouterModule.forChild(routes),
     CommonModule,
     HeaderModule,
   ],

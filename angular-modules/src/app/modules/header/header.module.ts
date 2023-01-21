@@ -13,15 +13,6 @@ export const HEADER_TITLE: InjectionToken<string> = new InjectionToken<string>('
   imports: [
     CommonModule
   ],
-  providers: [ {provide: HEADER_TITLE, useValue: 'Главная' } ]
 })
 export class HeaderModule {
-  // static forRoot(headerTitle: string): ModuleWithProviders<HeaderModule> {
-  //   return {
-  //     ngModule: HeaderModule,
-  //     providers: [
-  //       {provide: HEADER_TITLE, useValue: headerTitle }
-  //     ]
-  //   }
-  // }
 }
