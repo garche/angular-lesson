@@ -5,7 +5,7 @@
       <td>Имя</td>
       <td>Возраст</td>
     </thead>
-    <tr *ngFor="let person of  personList">
+    <tr *ngFor="let person of  personList" (click)="navigateToDetail(person.id)">
       <td>{{ person.name }}</td>
       <td>{{ person.age }}</td>
     </tr>

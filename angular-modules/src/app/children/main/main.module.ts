@@ -3,10 +3,13 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HeaderModule } from '../../modules/header/header.module';
 import { MainRoutingModule } from "./main.routing-module";
+import { PersonDetailComponent } from './childrens/person-detail/person-detail.component';
+import { PersonService } from "./services/person.service";
 
 @NgModule({
   declarations: [
-    MainComponent
+    MainComponent,
+    PersonDetailComponent
   ],
   exports: [MainComponent],
   imports: [
@@ -14,6 +17,6 @@ import { MainRoutingModule } from "./main.routing-module";
     HeaderModule,
     MainRoutingModule,
   ],
-  providers: [],
+  providers: [PersonService],
 })
 export class MainModule { }

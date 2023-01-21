@@ -1,5 +1,8 @@
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { LoggerService } from "../../../../services/logger.service";
+import { IPerson } from "../../interfaces/person.interface";
+import { PersonService } from "../../services/person.service";
+import { Router } from "@angular/router";
 @Component({
   selector: 'app-main',
   templateUrl: './main.component.html',
@@ -8,32 +11,21 @@ import { LoggerService } from "../../../../services/logger.service";
 })
 export class MainComponent implements OnInit{
 
-  public personList: any[] = [
-    {
-      name: 'Вася',
-      age:  10,
-    },
-    {
-      name: 'Василий',
-      age:  24,
-    },
-    {
-      name: 'Василяндрий',
-      age:  7,
-    },
-    {
-      name: 'Васякинатор',
-      age:  11,
-    },
-  ]
+  public personList: IPerson[]
 
   constructor(
     private _loggerService: LoggerService,
+    private _personService: PersonService,
+    private _router: Router,
   ) {
+    this.personList = this._personService.getPersonList();
   }
 
   public ngOnInit(): void {
     this._loggerService.debugLog('MainComponent ngOnInit')
   }
 
+  public navigateToDetail(id: number): void {
+    this._router.navigate(['person', String(id)])
+  }
 }
