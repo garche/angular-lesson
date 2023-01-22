@@ -2,7 +2,7 @@ import { Injectable } from "@angular/core";
 import { IPerson } from "../interfaces/person.interface";
 
 @Injectable()
-export class PersonService {
+export class PersonManagerService {
 
   private personList: IPerson[] = [
     {
