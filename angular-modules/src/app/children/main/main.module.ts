@@ -11,7 +11,6 @@ import { PersonService } from "./services/person.service";
     MainComponent,
     PersonDetailComponent
   ],
-  exports: [MainComponent],
   imports: [
     CommonModule,
     HeaderModule,
