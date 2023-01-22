@@ -4,9 +4,9 @@ import { AboutComponent } from './children/about/about.component';
 import { NotFoundComponent } from './children/not-found/not-found.component';
 
 const routes: Routes = [
-  { path: '', loadChildren: () => import('./children/main/main.module').then((m: any) => m.MainModule) },
-  { path: 'main', redirectTo: '/' },
+  { path: 'main', loadChildren: () => import('./children/main/main.module').then((m: any) => m.MainModule) },
   { path: 'about', component: AboutComponent },
+  { path: '', redirectTo: 'main', pathMatch: "full" },
   { path: '**', component: NotFoundComponent }
 ];
 
