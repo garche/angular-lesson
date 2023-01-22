@@ -1,7 +1,7 @@
-import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, ChangeDetectorRef, Component, OnInit } from '@angular/core';
 import { LoggerService } from "../../../../services/logger.service";
 import { IPerson } from "../../interfaces/person.interface";
-import { PersonService } from "../../services/person.service";
+import { PersonManagerService } from "../../services/person-manager.service";
 import { Router } from "@angular/router";
 @Component({
   selector: 'app-main',
@@ -15,8 +15,9 @@ export class MainComponent implements OnInit{
 
   constructor(
     private _loggerService: LoggerService,
-    private _personService: PersonService,
+    private _personService: PersonManagerService,
     private _router: Router,
+    private _cdr: ChangeDetectorRef,
   ) {
     this.personList = this._personService.getPersonList();
   }
@@ -26,6 +27,6 @@ export class MainComponent implements OnInit{
   }
 
   public navigateToDetail(id: number): void {
-    this._router.navigate(['person', String(id)])
+    this._router.navigate(['main', 'person', String(id)])
   }
 }

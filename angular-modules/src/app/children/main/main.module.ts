@@ -4,7 +4,7 @@ import { CommonModule } from '@angular/common';
 import { HeaderModule } from '../../modules/header/header.module';
 import { MainRoutingModule } from "./main.routing-module";
 import { PersonDetailComponent } from './childrens/person-detail/person-detail.component';
-import { PersonService } from "./services/person.service";
+import { PersonManagerService } from "./services/person-manager.service";
 
 @NgModule({
   declarations: [
@@ -16,6 +16,6 @@ import { PersonService } from "./services/person.service";
     HeaderModule,
     MainRoutingModule,
   ],
-  providers: [PersonService],
+  providers: [PersonManagerService],
 })
 export class MainModule { }
