@@ -5,9 +5,9 @@ import { AboutComponent } from './children/about/about.component';
 import { NotFoundComponent } from './children/not-found/not-found.component';
 
 const routes: Routes = [
-  { path: '', component: MainComponent },
-  { path: 'main', redirectTo: '/' },
+  { path: 'main', component: MainComponent },
   { path: 'about', component: AboutComponent },
+  { path: '', redirectTo: 'main', pathMatch: "full" },
   { path: '**', component: NotFoundComponent }
 ];
 

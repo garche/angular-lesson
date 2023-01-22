@@ -5,3 +5,7 @@
 a {
   padding: 5px;
 }
+
+.active {
+  color: red;
+}
