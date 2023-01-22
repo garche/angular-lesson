@@ -27,6 +27,10 @@ export class MainComponent implements OnInit{
   }
 
   public navigateToDetail(id: number): void {
-    this._router.navigate(['main', 'person', String(id)])
+    this._router.navigate(['main', 'person', String(id)], {
+      // queryParams: {
+      //   back: 'main'
+      // },
+    })
   }
 }

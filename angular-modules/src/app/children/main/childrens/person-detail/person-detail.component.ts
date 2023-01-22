@@ -18,20 +18,32 @@ export class PersonDetailComponent {
 
   public person!: IPerson;
 
+  // public backUrl: string = '';
+
   constructor(
     private _activatedRoute: ActivatedRoute,
     private _personService: PersonManagerService,
     private _router: Router,
     private _cdr: ChangeDetectorRef,
   ) {
-    const person: IPerson | undefined = this._personService.getPersonById(+this._activatedRoute.snapshot.params['id'])
+    // this.backUrl = this._activatedRoute.snapshot.queryParams['back'] || '';
 
-    if(!person){
-      this._router.navigate(['not-found'])
+    this._activatedRoute.params
+      .subscribe((params: {[key: string]: any}) => {
+        const person: IPerson | undefined = this._personService.getPersonById(+params['id'])
 
-      return;
-    }
+        if(!person){
+          this._router.navigate(['not-found'])
 
-    this.person = person;
+          return;
+        }
+
+        this.person = person;
+        this._cdr.markForCheck()
+      })
   }
+
+  // public navigateBack(): void {
+  //   this._router.navigate([this.backUrl]);
+  // }
 }
