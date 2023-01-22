@@ -7,7 +7,6 @@ import { HeaderModule } from "../../modules/header/header.module";
   declarations: [
     MainComponent
   ],
-  exports: [MainComponent],
   imports: [
     CommonModule,
     HeaderModule,
