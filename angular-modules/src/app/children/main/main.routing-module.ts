@@ -6,18 +6,23 @@ import { PersonDetailComponent } from "./childrens/person-detail/person-detail.c
 const routes: Routes = [
   {
     path: '',
-    component: MainComponent
+    component: MainComponent,
+    children: [{
+      path: 'person/:id',
+      component: PersonDetailComponent
+    }]
   },
-  {
-    path: 'person/:id',
-    component: PersonDetailComponent
-  }
+  // {
+  //   path: 'person/:id',
+  //   component: PersonDetailComponent
+  // }
 ]
 
 @NgModule({
   imports: [
     RouterModule.forChild(routes),
   ],
+  exports: [RouterModule],
   providers: [],
 })
 export class MainRoutingModule { }
