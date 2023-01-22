@@ -8,7 +8,6 @@ import { MainRoutingModule } from "./main.routing-module";
   declarations: [
     MainComponent
   ],
-  exports: [MainComponent],
   imports: [
     CommonModule,
     HeaderModule,
