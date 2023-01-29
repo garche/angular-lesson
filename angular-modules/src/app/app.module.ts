@@ -7,12 +7,14 @@ import { AppRoutingModule } from "./app-routing.module";
 import { AboutComponent } from './children/about/about.component';
 import { NotFoundComponent } from './children/not-found/not-found.component';
 import { HeaderModule } from "./modules/header/header.module";
+import { LoginComponent } from './children/login/login.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     AboutComponent,
     NotFoundComponent,
+    LoginComponent,
   ],
   imports: [
     BrowserModule,
