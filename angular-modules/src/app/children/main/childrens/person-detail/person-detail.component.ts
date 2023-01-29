@@ -18,7 +18,7 @@ export class PersonDetailComponent {
 
   public person!: IPerson;
 
-  // public backUrl: string = '';
+  public backUrl: string = '';
 
   constructor(
     private _activatedRoute: ActivatedRoute,
@@ -26,7 +26,7 @@ export class PersonDetailComponent {
     private _router: Router,
     private _cdr: ChangeDetectorRef,
   ) {
-    // this.backUrl = this._activatedRoute.snapshot.queryParams['back'] || '';
+    this.backUrl = this._activatedRoute.snapshot.queryParams['back'] || '';
 
     this._activatedRoute.params
       .subscribe((params: {[key: string]: any}) => {
@@ -43,7 +43,7 @@ export class PersonDetailComponent {
       })
   }
 
-  // public navigateBack(): void {
-  //   this._router.navigate([this.backUrl]);
-  // }
+  public navigateBack(): void {
+    this._router.navigate([this.backUrl]);
+  }
 }
