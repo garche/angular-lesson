@@ -2,6 +2,7 @@ import { RouterModule, Routes } from "@angular/router";
 import { MainComponent } from "./components/main/main.component";
 import { NgModule } from "@angular/core";
 import { PersonDetailComponent } from "./childrens/person-detail/person-detail.component";
+import { PersonalDetailGuard } from "./guards/personal-detail.guard";
 
 const routes: Routes = [
   {
@@ -10,7 +11,8 @@ const routes: Routes = [
   },
   {
     path: 'person/:id',
-    component: PersonDetailComponent
+    component: PersonDetailComponent,
+    canDeactivate: [PersonalDetailGuard]
   }
 ]
 

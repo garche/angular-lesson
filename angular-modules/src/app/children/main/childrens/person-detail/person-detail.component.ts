@@ -1,7 +1,7 @@
 import {
   ChangeDetectionStrategy,
   ChangeDetectorRef,
-  Component,
+  Component, ElementRef, ViewChild,
 } from '@angular/core';
 import { IPerson } from "../../interfaces/person.interface";
 import { ActivatedRoute, Router } from "@angular/router";
@@ -15,6 +15,13 @@ import { PersonManagerService } from "../../services/person-manager.service";
 })
 
 export class PersonDetailComponent {
+
+  // @ViewChild('checkbox')
+  // public checkbox!: ElementRef<HTMLInputElement>
+  //
+  // public get isCheckBoxConfirm(): any {
+  //   return this.checkbox.nativeElement.checked
+  // }
 
   public person!: IPerson;
 
