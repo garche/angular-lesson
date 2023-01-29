@@ -16,12 +16,12 @@ import { PersonManagerService } from "../../services/person-manager.service";
 
 export class PersonDetailComponent {
 
-  // @ViewChild('checkbox')
-  // public checkbox!: ElementRef<HTMLInputElement>
-  //
-  // public get isCheckBoxConfirm(): any {
-  //   return this.checkbox.nativeElement.checked
-  // }
+  @ViewChild('checkbox')
+  public checkbox!: ElementRef<HTMLInputElement>
+
+  public get isCheckBoxConfirm(): any {
+    return this.checkbox.nativeElement.checked
+  }
 
   public person!: IPerson;
 
