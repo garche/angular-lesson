@@ -13,12 +13,13 @@ export class PersonalDetailGuard implements CanDeactivate<PersonDetailComponent>
     currentRoute: ActivatedRouteSnapshot,
     nextState: RouterStateSnapshot
   ): Observable<boolean | UrlTree> | boolean | UrlTree {
+
     return component.isCheckBoxConfirm || nextState.url === '/login' ?
       true
       : (() => {
-      alert('Вы должны проставить галочку')
+        alert('Вы должны проставить галочку')
 
-      return false
+        return false
     })()
   }
 }

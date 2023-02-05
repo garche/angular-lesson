@@ -3,6 +3,8 @@ import { MainComponent } from "./components/main/main.component";
 import { NgModule } from "@angular/core";
 import { PersonDetailComponent } from "./childrens/person-detail/person-detail.component";
 import { PersonalDetailGuard } from "./guards/personal-detail.guard";
+import { RandomDogComponent } from "./childrens/random-dog/random-dog.component";
+import { GetDogResolver } from "./childrens/random-dog/resolvers/get-dog.resolver";
 
 const routes: Routes = [
   {
@@ -13,6 +15,13 @@ const routes: Routes = [
     path: 'person/:id',
     component: PersonDetailComponent,
     canDeactivate: [PersonalDetailGuard]
+  },
+  {
+    path: 'dog',
+    component: RandomDogComponent,
+    resolve: {
+      imageSrc: GetDogResolver
+    }
   }
 ]
 
