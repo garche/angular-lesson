@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { map, Observable } from "rxjs";
 import { ActivatedRoute, Data } from "@angular/router";
+import { HttpClient } from "@angular/common/http";
 
 @Component({
   selector: 'app-random-dog',
@@ -8,14 +9,18 @@ import { ActivatedRoute, Data } from "@angular/router";
   styleUrls: ['./random-dog.component.css']
 })
 export class RandomDogComponent {
-  public src$: Observable<string> = this._activatedRoute.data
+  public dogSrc$: Observable<string> = this._httpService.get<{message: string}>('https://dog.ceo/api/breeds/image/random')
     .pipe(
-      map((data: Data) => data['imageSrc']),
-    );
+      map((value: {message: string}) => value.message)
+    )
+    // this._activatedRoute.data
+    // .pipe(
+    //   map((data: Data) => data['imageSrc']),
+    // );
   constructor(
-    private _activatedRoute: ActivatedRoute
-
-  ){
+    // private _activatedRoute: ActivatedRoute,
+    private _httpService: HttpClient
+){
 
   }
 }
