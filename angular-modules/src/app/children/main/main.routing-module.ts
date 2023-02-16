@@ -19,9 +19,9 @@ const routes: Routes = [
   {
     path: 'dog',
     component: RandomDogComponent,
-    // resolve: {
-    //   imageSrc: GetDogResolver
-    // }
+    resolve: {
+      imageSrc: GetDogResolver
+    }
   }
 ]
 

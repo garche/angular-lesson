@@ -9,16 +9,13 @@ import { HttpClient } from "@angular/common/http";
   styleUrls: ['./random-dog.component.css']
 })
 export class RandomDogComponent {
-  public dogSrc$: Observable<string> = this._httpService.get<{message: string}>('https://dog.ceo/api/breeds/image/random')
+  public dogSrc$: Observable<string> = this._activatedRoute.data
     .pipe(
-      map((value: {message: string}) => value.message)
-    )
-    // this._activatedRoute.data
-    // .pipe(
-    //   map((data: Data) => data['imageSrc']),
-    // );
+      map((data: Data) => data['imageSrc']),
+    );
+
   constructor(
-    // private _activatedRoute: ActivatedRoute,
+    private _activatedRoute: ActivatedRoute,
     private _httpService: HttpClient
 ){
 
